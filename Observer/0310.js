@@ -1,4 +1,4 @@
-var tickents = [["ICN", "JFK"], ["HND", "IAD"], ["JFK", "HND"]]
+var tickents = [["ICN", "A"], ["A", "B"], ["A", "C"],["C","A"],["B","D"]]
 
 function solution(tickents){
     var answer=[];
