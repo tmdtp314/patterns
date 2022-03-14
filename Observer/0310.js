@@ -1,42 +1,50 @@
-var tickents = [["ICN", "SFO"], ["ICN", "ATL"], ["SFO", "ATL"], ["ATL", "ICN"], ["ATL","SFO"]];
-   
+var tickents = [["ICN", "JFK"], ["HND", "IAD"], ["JFK", "HND"]]
+
 function solution(tickents){
     var answer=[];
  
-    answer=tickents;
-
-    array[tickents]
-
-    
+   
+    return array(tickents);
    
 }
 function array(arr_){
    
     var x=0;
     
-    var arr2=[];
-    var result=[];
+   
+    var result=["ICN"];
+    var start ="ICN"
+    var min=start
+
     var arr =arr_;
-  
-    for(var i=0;i<arr.length;i++){
-       if(arr[i][0]=="ICN"){
-           for(var j=0;j<arr[i].length;j++){
-           //console.log(parseInt('AAA',36))
-           if(parseInt(arr[i][x],36)>parseInt(arr[i][j],36)) {
-               arr2.length=0; // 초기화
-               x=i;
-               arr2.push(arr[i])
+    var length = arr.length;
+    var arr2=[];
+ 
+    while(length!=0){     
+        for(var i=0;i<arr.length;i++){
+            if(arr[i][0]==start){
             
+                if(arr[i][0]==min) {
+                    min=arr[i][1];
+                    
+                }
+          
+                if(parseInt(min,36)>=parseInt(arr[i][1],36)){
+                min=arr[i][1];             
+                x=i;           
             }
-           }
-       }
-       
+
+            }  
+               
+        }
+        result.push(min) 
+    arr.splice(x,1);   
+    start = result[result.length-1]
+    length=length-1;
     }
-   tickents.splice(x,1)
-   result.push(arr2)
-  // console.log(arr2)
-  return arr2;
+
+  return result;
    
 }
-solution(tickents);
-console.log(tickents)
+
+console.log(solution(tickents))
